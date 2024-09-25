@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viziteaza Timisoara</title>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+        text-align: center;
+    }
+
+    .container {
+        width: 90%;
+        max-width: 600px; /* Limits the width for larger screens */
+        margin: 0 auto;
+        padding: 30px 15px;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1, h2 {
+        color: #333;
+        font-size: 1.8em;
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+        max-height: 400px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin: 20px 0;
+    }
+
+    .text-content {
+        font-size: 1em;
+        color: #555;
+        margin: 15px 0;
+    }
+
+    .next-button {
+        font-size: 1.1em;
+        background-color: #28a745;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        margin-top: 10px;
+    }
+
+    .next-button:hover {
+        background-color: #218838;
+    }
+
+    .input-box {
+        padding: 10px;
+        font-size: 16px;
+        width: 100%;
+        max-width: 300px;
+        margin: 10px auto;
+        display: block;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .square-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .square {
+        width: 60px;
+        height: 60px;
+        display: inline-block;
+    }
+
+    @media (max-width: 600px) {
+        h1, h2 {
+            font-size: 1.5em;
+        }
+
+        .text-content {
+            font-size: 0.9em;
+        }
+
+        .next-button {
+            font-size: 1em;
+            padding: 8px 15px;
+        }
+
+        .square {
+            width: 50px;
+            height: 50px;
+        }
+
+        .input-box {
+            font-size: 14px;
+        }
+    }
+    </style>
+</head>
+<body>
+
+    <div class="container" id="content">
+        <!-- Starting screen (1) -->
+        <h1>Bun venit in Timisoara</h1>
+        <img src="https://facts.net/wp-content/uploads/2023/07/43-facts-about-timisoara-1689325160.jpeg" alt="Timisoara, Romania">
+        <h2>Misiunea ta:</h2>
+		<h1>Salveaza Timisoara!</h1>
+		<h2>O bombă va exploda în 30 de minute!</h2>
+		<h2>Poți dezamorsa bomba la timp doar dacă termini jocul și răspunzi corect la întrebarea finală.</h2>
+		<h2>Timpul trece – soarta orașului este în mâinile tale!</h2>
+        <button class="next-button" onclick="nextScreen()">Incepe</button>
+    </div>
+
+    <script>
+        function nextScreen() {
+            document.getElementById('content').innerHTML = `
+                <!-- Screen 2 -->
+                <h2>
+                    Timișoara, adesea numit „Orașul Florilor,” este unul dintre cele mai vibrante și semnificative orașe din punct de vedere istoric din România.  
+                </br></br>Cunoscut pentru cultura sa diversă, arhitectura frumoasă și numeroasele spații verzi, Timișoara oferă câte ceva pentru toată lumea.  
+                </br></br>Este un oraș al inovației și al istoriei, fiind primul oraș european cu iluminat stradal electric.  
+                </br></br>Amestecul său de vechi și de nou face din Timișoara o destinație perfectă pentru explorarea culturii, artei și istoriei.
+                </h2>
+                <button class="next-button" onclick="nextScreen3()">Next</button>
+            `;
+        }
+
+        function nextScreen3() {
+            document.getElementById('content').innerHTML = `
+                <!-- Screen 3: Catedrala Ortodoxa -->
+                <h1>Catedrala Ortodoxa</h1>
+                <p class="text-content">
+                    Unul dintre cele mai emblematice repere din Timișoara este Catedrala Ortodoxă, cunoscută pentru arhitectura sa uimitoare și dimensiunea impresionantă.  
+                 Această catedrală, situată în Piața Victoriei, domină orizontul cu turlele sale înalte și lucrările detaliate din cărămidă. Nu este doar un simbol spiritual, ci și o reprezentare a rădăcinilor culturale și istorice profunde ale Timișoarei.
+                </p>
+                <img src="https://www.opiniatimisoarei.ro/wp-content/uploads/2017/09/timisoara-centru-catedrala-victoriei-728x336.jpg" alt="Catedrala Ortodoxa">
+                <button class="next-button" onclick="nextScreen4()">Next</button>
+            `;
+        }
+
+        function nextScreen4() {
+            document.getElementById('content').innerHTML = `
+                <!-- Screen 4: Question about the benches -->
+                <h1>The Adventure Begins!</h1>
+                <p class="text-content">
+                    Te afli în fața Catedralei, cu fața spre oraș. Trebuie să traversezi strada!
+                </p>
+				</br>
+				<h1>Intrebare #1</h1>
+                <p class="text-content">Cate banci sunt?</p>
+				</br>
+				</br>
+                <input type="password" id="answer4" placeholder="Enter the number of benches" style="padding: 10px; font-size: 16px;">
+                </br>
+				</br>
+				</br>
+				<button class="next-button" onclick="checkAnswer4()">Submit Answer</button>
+            `;
+        }
+
+        function checkAnswer4() {
+            const answer = document.getElementById('answer4').value;
+            if (answer === '8') {
+                nextScreen5();
+            } else {
+                alert("Incorrect! Try again.");
+            }
+        }
+
+        function nextScreen5() {
+            document.getElementById('content').innerHTML = `
+                <!-- Screen 5: Palatul Szechenyi -->
+				<h2>În stânga ta, acea clădire este</h2>
+                <h1>Palatul Szechenyi</h1>
+                <p class="text-content">Palatul Szechenyi este o bijuterie arhitecturală situată în Timișoara. Construit la începutul secolului al XX-lea, acesta îmbină stiluri Art Nouveau și Neo-Baroc. Palatul este renumit pentru detaliile sale decorative, fațada sa complexă și semnificația sa istorică în dezvoltarea orașului.</p>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Palatul_Szechenyi_1.jpg" alt="Palatul Szechenyi">
+                <button class="next-button" onclick="nextScreen6()">Next</button>
+            `;
+        }
+
+        function nextScreen6() {
+            document.getElementById('content').innerHTML = `
+                <!-- Screen 6: Palatul Hilt -->
+                <h1>Palatul Hilt</h1>
+                <p class="text-content">Palatul Hilt este o altă clădire istorică din Timișoara, cunoscută pentru arhitectura sa unică ce îmbină elemente de Neo-Renaștere și Art Nouveau. Construit la începutul anilor 1900, rămâne o parte importantă a patrimoniului orașului, atrăgând atât localnici, cât și turiști.</p>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/b/bf/Palatul_Hilt-Vogel.jpg" alt="Palatul Hilt">
+                <button class="next-button" onclick="nextScreen7()">Next</button>
+            `;
+        }
+
+        function nextScreen7() {
+            document.getElementById('content').innerHTML = `
+                <!-- Screen 7: Piata Victoriei -->
+                <h1>Piata Victoriei</h1>
+                <p class="text-content">Piata Victoriei este piata centrala din Timisoara, cunoscuta pentru importanta istorica si atmosfera culturala vibranta. Este înconjurata de clădiri frumoase, inclusiv Opera și Catedrala Mitropolitană Ortodoxă. Piața a fost locul multor evenimente semnificative, inclusiv Revoluția Română din 1989.</p>
+                <img src="https://a.travel-assets.com/findyours-php/viewfinder/images/res70/129000/129816-Timisoara.jpg" alt="Piata Victoriei">
+                <button class="next-button" onclick="nextScreen8()">Next</button>
+            `;
+        }
+
+        function nextScreen8() {
+            document.getElementById('content').innerHTML = `
+                <!-- Screen 8 -->
+                <p class="text-content">
+                    Te afli în Piața Victoriei lângă Fântâna Peștelui.
+                </p>
+				</br>
+				<h1>Intrebare #2</h1>
+				</br>
+				</br>
+                <h2>Nu am gură și nici nas, dar am o față. Am și două mâini, dar fără picioare și fără degete. Ce sunt?</h2>
+                </br>
+				<input type="password" id="answer8" placeholder="Enter your answer" style="padding: 10px; font-size: 16px;">
+                </br>
+				</br>
+				</br>
+				<button class="next-button" onclick="checkAnswer8()">Submit Answer</button>
+            `;
+        }
+
+        function checkAnswer8() {
+            const answer = document.getElementById('answer8').value.toLowerCase();
+            if (answer === 'ceas') {
+                nextScreen9();
+            } else {
+                alert("Incorrect! Try again.");
+            }
+        }
+
+        function nextScreen9() {
+            document.getElementById('content').innerHTML = `
+                <!-- Screen 9 -->
+				<h2>Acum du-te la ceas! Apoi întoarce-te.</h2>
+                <p class="text-content">
+                    În stânga ta, poți vedea o statuie cu un lup hrănind doi copii.
+                </p>
+				<h1>Statuia Lupoaicei</h1>
+				<p>este un simbol al Romei antice. Reprezintă scena legendară a lupoaicei care îl alăptează pe Romulus și Remus, fondatorii gemeni ai Romei. O statuie similară poate fi găsită în multe orașe din Europa, inclusiv în Timișoara.</p>
+                <img src="https://a.travel-assets.com/findyours-php/viewfinder/images/res70/130000/130138-Piata-Operei.jpg">
+                <button class="next-button" onclick="nextScreen10()">Next</button>
+            `;
+        }
+
+        function nextScreen10() {
+            document.getElementById('content').innerHTML = `
+                <!-- Screen 10: Palatul Loffler -->
+                <p class="text-content">
+                    În fața statuii, ai 
+                </p>
+				 <h1>Palatul Loffler</h1>
+				<p>Palatul Loffler este o clădire frumoasă din Timișoara care prezintă stilul arhitectural secesionist. A fost construit la începutul secolului al XX-lea și este cunoscut pentru fațada sa complicată și semnificația istorică.</p>
+                <img src="https://www.gpsmycity.com/img/gd_sight/36694.jpg">
+                <button class="next-button" onclick="nextScreen11()">Next</button>
+            `;
+        }
+
+        function nextScreen11() {
+            document.getElementById('content').innerHTML = `
+                <!-- Screen 11: Palatul Dauerbach -->
+                <h1>Palatul Dauerbach</h1>
+                <p>Palatul Dauerbach este o clădire emblematică situată în inima Timișoarei. Construită la începutul anilor 1900, arhitectura sa îmbină art nouveau cu influențe clasiciste, făcându-l un reper remarcabil.</p>
+                <img src="https://heritageoftimisoara.ro/storage/3378/conversions/DSC_0041_resized3000-featured.jpg">
+                <button class="next-button" onclick="nextScreen12()">Next</button>
+            `;
+        }
+
+        function nextScreen12() {
+            document.getElementById('content').innerHTML = `
+                <!-- Screen 12 -->
+                <h1>Palatul Merbl</h1>
+                <p>
+                    Palatul Dauerbach, un exemplu uimitor de arhitectura secesionista, se afla in piata centrala a Timisoarei. Construit la începutul secolului al XX-lea, designul său este remarcat pentru eleganța și importanța istorică pentru oraș.</p>
+                <img src="https://heritageoftimisoara.ro/storage/3325/conversions/DJI_0756-medium.jpg" alt="The Merbl Palace">
+                <p class="text-content">
+                    Mergi drept până vezi porumbei! Și da, te poți juca cu porumbeii – sunt prietenoși! Dar grăbește-te, pentru că trebuie să salvezi Orașul!
+                </p>
+                <button class="next-button" onclick="nextScreen13()">Next</button>
+            `;
+        }
+
+        function nextScreen13() {
+            document.getElementById('content').innerHTML = `
+                <!-- Screen 13 -->
+				<img src="https://www.romaniajournal.ro/wp-content/uploads/2019/12/revolutie-TM.jpg">
+				</br>
+                <h1>Intrebare #3</h1>
+				</br>
+                <h2>Ce s-a întâmplat aici în 1989?</h2>
+				</br>
+				</br>
+                <input type="password" id="answer13" placeholder="Enter your answer" style="padding: 10px; font-size: 16px;">
+                </br>
+				</br>
+				</br>
+				<button class="next-button" onclick="checkAnswer13()">Submit Answer</button>
+            `;
+        }
+
+        function checkAnswer13() {
+            const answer = document.getElementById('answer13').value.toLowerCase();
+            if (answer === 'revolutia') {
+                nextScreen14();
+            } else {
+                alert("Incorrect! Try again.");
+            }
+        }
+
+        function nextScreen14() {
+            document.getElementById('content').innerHTML = `
+                <!-- Screen 14: Opera of Timisoara -->
+                <h1>Opera din Timisoara</h1>
+                <p class="text-content">
+                    Opera Națională Timișoara este unul dintre reperele emblematice ale orașului. Construit în secolul al XIX-lea, nu este doar o frumusețe arhitecturală, ci și un centru pentru evenimente culturale, inclusiv opere, balete și concerte simfonice. Fațada sa impresionantă este orientată spre Piața Victoriei.</p>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/77/Opera_Na%C8%9Bional%C4%83_Rom%C3%A2n%C4%83_din_Timi%C8%99oara_%28April_-_2023%29.jpg">
+                <button class="next-button" onclick="nextScreen15()">Next</button>
+            `;
+        }
+
+        function nextScreen15() {
+            document.getElementById('content').innerHTML = `
+                <!-- Screen 15 -->
+                <h1>Umbrelele Colorate</h1>
+                <img src="https://i.pinimg.com/originals/53/e3/f0/53e3f01fff35230382cc9746cfc086a0.jpg" alt="Colorful Umbrellas in Timisoara">
+                <p class="text-content">
+                    Când le vezi, mergi drept pe strada respectivă până ajungi în altă Piață, Piața Libertății :) Acolo trebuie să găsești statuia unui copil 
+                    ținându-și mâna la cap de parcă ar vorbi la telefon.
+                </p>
+				</br>
+				<h1>Intrebare #4</h1>
+                <h2>Ce culoare are statuia?</h2>
+				</br>
+                <input type="password" id="answer15" placeholder="Enter your answer" style="padding: 10px; font-size: 16px;">
+                </br>
+				</br>
+				<button class="next-button" onclick="checkAnswer15()">Submit Answer</button>
+            `;
+        }
+		
+		function checkAnswer15() {
+            const answer = document.getElementById('answer15').value.toLowerCase();
+            if (answer === 'negru') {
+                nextScreen16();
+            } else {
+                alert("Incorrect! Try again.");
+            }
+        }
+		
+	
+        // Starting on screen 16
+        function nextScreen16() {
+            document.getElementById('content').innerHTML = `
+                <h1>Piața Libertății</h1>
+                <p class="text-content">
+                    Piața Libertății este una dintre piețele istorice din Timișoara, prezentând o arhitectură frumoasă și o istorie bogată. Este un amestec perfect între farmecul lumii vechi și viața vibrantă a orașului.</p>
+				</br>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Temi%C5%A1var%2C_Rumunija_22.jpg/1200px-Temi%C5%A1var%2C_Rumunija_22.jpg">
+                </br>
+				</br>
+				</br>
+				<button class="next-button" onclick="nextScreen17()">Next</button>
+            `;
+        }
+		
+
+        function nextScreen17() {
+            document.getElementById('content').innerHTML = `
+                <p class="text-content">
+                   Ești în fața statuii si te uiti la ea. Acum mergi la stânga și traverseaza strada. Ai grijă când traversezi strada. Acum mergi drept, pana ajungi in alta Piata :)</p>
+				<h1>Piața Unirii</h1>
+                <p class="text-content">
+                    Piața Unirii este o locație centrală în Timișoara, plină de istorie si arhitectură frumoasă. 
+                    Este cunoscuta pentru clădirile sale în stil baroc, fațadele grandioase și istoria sa bogata.</p>
+                <img src="https://www.impactpress.ro/wp-content/uploads/2023/02/Piata-Unirii-din-Timisoara.jpeg" alt="Union Square">
+                </br>
+				<button class="next-button" onclick="nextScreen18()">Next</button>
+            `;
+        }
+
+        function nextScreen18() {
+            document.getElementById('content').innerHTML = `
+                <!-- Screen 18 -->
+                <h1>Intrebare #5</h1>
+				<h2>Când suflă vântul, îți fac semn cu mâna. Uneori sunt roșu, galben și albastru. Ce sunt?</h2>
+				</br>
+				<input type="password" id="answer18" placeholder="Enter your answer" style="padding: 10px; font-size: 16px;">
+                </br>
+				</br>
+				</br>
+				<button class="next-button" onclick="checkAnswer18()">Submit Answer</button>
+            `;
+        }
+
+        function checkAnswer18() {
+            const answer = document.getElementById('answer18').value.toLowerCase();
+            if (answer === 'steag') {
+                nextScreen19();
+            } else {
+                alert("Incorrect! Try again.");
+            }
+        }
+
+        function nextScreen19() {
+            document.getElementById('content').innerHTML = `
+                <!-- Screen 19 -->
+                <h1>Gaseste steagul!</h1>
+                <p class="text-content">Uita-te în stânga ta și găsește steagul!</p>
+                <h1>Intrebare #6</h1>
+				<h2>Ce culoare are clădirea unde este steagul?</h2>
+				</br>
+                <input type="password" id="answer19" placeholder="Enter your answer" style="padding: 10px; font-size: 16px;">
+                </br>
+				</br>
+				</br>
+				<button class="next-button" onclick="checkAnswer19()">Submit Answer</button>
+            `;
+        }
+
+        function checkAnswer19() {
+            const answer = document.getElementById('answer19').value.toLowerCase();
+            if (answer === 'alb') {
+                nextScreen20();
+            } else {
+                alert("Incorrect! Try again.");
+            }
+        }
+
+        function nextScreen20() {
+            document.getElementById('content').innerHTML = `
+                <!-- Screen 20 -->
+                <h1>Palatul Episcopal Ortodox Sârbesc</h1>
+                <p class="text-content">
+                    Palatul Episcopal Ortodox Sârbesc este una dintre cele mai emblematice și semnificative clădiri din Timișoara, reflectând diversitatea culturală a orașului.</p>
+                <img src="https://heritageoftimisoara.ro/storage/2167/conversions/HOT-95-medium.jpg">
+                <button class="next-button" onclick="nextScreen21()">Next</button>
+            `;
+        }
+
+        function nextScreen21() {
+            document.getElementById('content').innerHTML = `
+                <!-- Screen 21 -->
+                <h1>Gaseste asta</h1>
+                <div class="square-container">
+                   <div class="square red"></div>
+                   <div class="square white"></div>
+                   <div class="square orange"></div>
+                   <div class="square yellow"></div>
+                </div>
+                <p class="text-content" style="font-weight: bold;">Find this</p>
+                <h1>Intrebare #7</h1>
+				<h2>Câte ferestre sunt aici?</h2>
+				</br>
+				</br>
+                <input type="password" id="answer21" placeholder="Enter your answer" style="padding: 10px; font-size: 16px;">
+                </br>
+				</br>
+				</br>
+				<button class="next-button" onclick="checkAnswer21()">Submit Answer</button>
+            `;
+        }
+
+        function checkAnswer21() {
+            const answer = document.getElementById('answer21').value;
+            if (answer === '26') {
+                nextScreen22();
+            } else {
+                alert("Incorrect! Try again.");
+            }
+        }
+
+        function nextScreen22() {
+            document.getElementById('content').innerHTML = `
+                <!-- Screen 22 -->
+                <h1>Casele Canonicilor</h1>
+                <p class="text-content">
+                    Casele Canonicilor sunt clădiri istorice care reprezintă stilul arhitectural baroc și găzduiesc personalități religioase importante.
+                </p>
+				</br>
+                <img src="https://live.staticflickr.com/3747/32676161343_031887c44b_h.jpg">
+                </br>
+				</br>
+				</br>
+				<button class="next-button" onclick="nextScreen23()">Next</button>
+            `;
+        }
+
+        function nextScreen23() {
+            document.getElementById('content').innerHTML = `
+                <p class="text-content">
+                    Esti în fața Casei Canonicilor, uita-te in dreapta și poti vedea
+                </p>
+				<h1>Catedrala Romano-Catolică Sf. Gheorghe</h1>
+				<p>O structură maiestuoasă care joacă un rol cheie în istoria religioasă și arhitecturală a Timișoarei.</p>
+                </br>
+				<img src="https://roamingromania.com/wp-content/uploads/2018/12/catedrala-sfantul-gheorghe-timisoara.jpg">
+                </br>
+                </br>
+				<button class="next-button" onclick="nextScreen24()">Next</button>
+            `;
+        }
+
+        function nextScreen24() {
+            document.getElementById('content').innerHTML = `
+                <h1>Intrebare #8</h1>
+                <h2>
+                Trecutul este cuprins
+                <br>
+                într-o construcție.
+                <br>
+                Există cultură sau cunoaștere
+                <br>
+                gata să fie împărtășită.
+                <br>
+                Unde este acest loc?
+                </h2>
+                </br>
+                <input type="password" id="answer24" placeholder="Enter your answer">
+                </br>
+                </br>
+                </br>
+                <button class="next-button" onclick="checkAnswer24()">Submit Answer</button>
+            `;
+        }
+
+        function checkAnswer24() {
+            const answer = document.getElementById('answer24').value.toLowerCase();
+            if (answer === 'muzeu') {
+                nextScreen25();
+            } else {
+                alert("Incorrect! Try again.");
+            }
+        }
+
+        function nextScreen25() {
+            document.getElementById('content').innerHTML = `
+                <h2>Mergi la Muzeu!</h2>
+                <h1>Muzeul de Arta</h1>
+                <p class="text-content">
+                    Muzeul de Artă din Timișoara este găzduit într-o frumoasă clădire istorică și prezintă o vastă colecție de picturi, sculpturi și alte lucrări de artă din diverse perioade.</p>
+				</br>
+                <img src="https://image.wmsm.co/1d13f1ec005ab32918364f0a35314f4a/muzeul-de-arta-timisoara-1.jpg?quality=80&width=1280">
+                </br>
+				</br>
+				</br>
+				<button class="next-button" onclick="nextScreen26()">Next</button>
+            `;
+        }
+
+        function nextScreen26() {
+            document.getElementById('content').innerHTML = `
+                <p class="text-content">
+                    Esti in fata muzeului,te uiti la el,apoi te uiti în dreapta ta, la clădirea plină de culoare.
+                </p>
+                <h2>Casa Brück</h2>
+                <p class="text-content">
+                    Casa Bruck este una dintre cele mai emblematice clădiri din Piața Unirii din Timișoara, prezentând un stil arhitectural art nouveau cu fațada sa plină de culoare.</p>
+                <img src="https://www.gonext.ro/wp-content/uploads/2022/04/PALATUL-BRUCK-foto-timisoara.jpg">
+                <button class="next-button" onclick="nextScreen27()">Next</button>
+            `;
+        }
+
+        function nextScreen27() {
+            document.getElementById('content').innerHTML = `
+                <img src="https://images.cazare.online/attractions/1331/large/ZXuP4P_7519adf9a498f33d2d40b4159bb12971.jpg">
+				<h1>Gaseste asta!</h1>
+				<h1>Intrebare #9</h1>
+                <p class="text-content">În ce parte a Pieței se află ce apare in imagine?</p>
+				</br>
+                <input type="password" id="answer27" placeholder="Enter your answer">
+                </br>
+				</br>
+				</br>
+				<button class="next-button" onclick="checkAnswer27()">Submit Answer</button>
+            `;
+        }
+
+        function checkAnswer27() {
+            const answer = document.getElementById('answer27').value.toLowerCase();
+            if (answer === 'centru') {
+                nextScreen28();
+            } else {
+                alert("Incorrect! Try again.");
+            }
+        }
+
+        function nextScreen28() {
+            document.getElementById('content').innerHTML = `
+                <h1>Monumentul Sfintei Treimi</h1>
+                <p class="text-content">
+                    Monumentul Sfintei Treimi a fost construit pentru a comemora victimele ciumei și pentru a proteja orașul de viitoarele epidemii.</p>
+                <img src="https://www.opiniatimisoarei.ro/wp-content/gallery/monumentul-ciumei-piata-unirii-coroana-foita-de-aur/statuie-piata-unirii-2_0.jpg">
+                <button class="next-button" onclick="nextScreen29()">Next</button>
+            `;
+        }
+
+        function nextScreen29() {
+            document.getElementById('content').innerHTML = `
+                <h1>This is the last Question to stop the BOMB!</h1>
+                <p class="text-content">
+                    Raspunde corect,
+					</br>
+					și ai salvat orașul!
+					</br>
+					<h1>Întrebarea nr. 10</h1>
+                    <h2>Cum se spune „IUBESC TIMISOARA” în română?</h2>
+					</br>
+                </p>
+                <input type="password" id="answer29" placeholder="Enter your answer">
+				</br>
+				</br>
+                <button class="next-button" onclick="checkAnswer29()">Submit Answer</button>
+            `;
+        }
+
+        function checkAnswer29() {
+            const answer = document.getElementById('answer29').value.toUpperCase();
+            if (answer === 'EU IUBESC TIMISOARA') {
+                nextScreen30();
+            } else {
+                alert("Incorrect! Try again.");
+            }
+        }
+
+        function nextScreen30() {
+            document.getElementById('content').innerHTML = `
+                <h1>AI REUSIT! AI SALVAT ORAȘUL!</h1>
+                <p class="text-content">Felicitări pentru finalizarea vânătorii de tesori din Timișoara!</p>
+                <img src="https://image.spreadshirtmedia.com/image-server/v1/compositions/T812A2PA4267PT17X37Y95D1037413415W27316H9621/views/1,width=550,height=550,appearanceId=2,backgroundColor=000000,noPt=true/i-love-timioara-rumania-mens-premium-t-shirt.jpg">
+                <p class="text-content">IUBIȚI TIMISOARA! AI FINALIZAT VÂNĂTOAREA TIMISOARA!</p>
+            `;
+        }
+        
+    </script>
+
+</body>
+</html>
