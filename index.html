@@ -391,7 +391,7 @@
             document.getElementById('content').innerHTML = `
                 <!-- Screen 18 -->
                 <h1>Intrebare #5</h1>
-				<h2>Când suflă vântul, îți fac semn cu mâna. Uneori sunt roșu, galben și albastru. Ce sunt?</h2>
+				<h2>În vârful acestei clădiri, veți observa o cruce, dar nu este o biserică si nicio statuie. Găsiți clădirea și mergeți acolo. Ce culoare are partea de sus?</h2>
 				</br>
 				<input type="password" id="answer18" placeholder="Enter your answer" style="padding: 10px; font-size: 16px;">
                 </br>
@@ -403,7 +403,7 @@
 
         function checkAnswer18() {
             const answer = document.getElementById('answer18').value.toLowerCase();
-            if (answer === 'steag') {
+            if (answer === 'alb') {
                 nextScreen19();
             } else {
                 alert("Incorrect! Try again.");
@@ -413,10 +413,9 @@
         function nextScreen19() {
             document.getElementById('content').innerHTML = `
                 <!-- Screen 19 -->
-                <h1>Gaseste steagul!</h1>
-                <p class="text-content">Uita-te în stânga ta și găsește steagul!</p>
+                <p class="text-content">Ești în fața acelei clădiri, te uiti la ea. Te intorci spre dreapta</p>
                 <h1>Intrebare #6</h1>
-				<h2>Ce culoare are clădirea unde este steagul?</h2>
+				<h2>Ce culoare are a doua clădire din stânga?</h2>
 				</br>
                 <input type="password" id="answer19" placeholder="Enter your answer" style="padding: 10px; font-size: 16px;">
                 </br>
@@ -428,7 +427,7 @@
 
         function checkAnswer19() {
             const answer = document.getElementById('answer19').value.toLowerCase();
-            if (answer === 'alb') {
+            if (answer === 'albastru') {
                 nextScreen20();
             } else {
                 alert("Incorrect! Try again.");
